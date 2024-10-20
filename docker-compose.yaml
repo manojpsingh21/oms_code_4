@@ -25,5 +25,5 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: ./user_data/
+      device: ../user_data/
 
