@@ -19,7 +19,8 @@ mv oms_code_4 user_data
 
 #mv ./user_data/* ./
 cd ./user_data/
-mkdir ./shared_migration
+mkdir ../shared_migration ../config_data
+mv ./sshd_config ../config_data/
 cat rpm_part_* >mysql_rpm.tar.gz
 
 echo "mysql rpm files created"
