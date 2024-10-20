@@ -12,12 +12,13 @@ fi
 user_name=$1
 export MY_DOCKER_CODE_USER=$user_name
 
-mkdir my_oms_code
-#git clone https://github.com/manojpsingh21/docker_code_file.git
+echo $MY_DOCKER_CODE_USER
+mkdir oms_code
+git clone https://github.com/manojpsingh21/oms_code_4.git
 
-#mv ./docker_code_file/* ./
+mv ./oms_code_4/* ./
 
-#cat rpm_part_* >mysql_rpm.tar.gz
+cat rpm_part_* >mysql_rpm.tar.gz
 
 #rm -rf rpm_part_*
 
@@ -33,4 +34,4 @@ echo "OMS tar file extracted successfully "
 #docker build --build-arg MY_DOCKER_CODE_USER=$user_name -t my-custom-image .
 
 
-docker compose up -d
+#docker compose up -d
