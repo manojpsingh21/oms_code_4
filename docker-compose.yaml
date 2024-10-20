@@ -9,16 +9,16 @@ services:
       - my-linux-code-mount:/home/${MY_DOCKER_CODE_USER}/
       - ./../config_data/sshd_config:/etc/ssh/sshd_config
       - ./../config_data/shared_migration:/shared_migration/
-        #- ./../config_data/sudoers:/etc/sudoers
     ports:
       - "1994:22"
     command: >
-      /bin/bash -c "id -u ${MY_DOCKER_CODE_USER} &>/dev/null || useradd -m ${MY_DOCKER_CODE_USER} && 
-                dnf -y install sudo &&  sed -i '110i %wheel        ALL=(ALL)       NOPASSWD: ALL' /etc/sudoers' &&  sed -i '111i %${MY_DOCKER_CODE_USER}  ALL=(ALL)   NOPASSWD: ALL' /etc/sudoers'
-                && openssh-server && 
-                ssh-keygen -A && 
-                echo 'root:password' | chpasswd && 
-                echo '${MY_DOCKER_CODE_USER}:password' | chpasswd && 
+      /bin/bash -c "id -u ${MY_DOCKER_CODE_USER} &>/dev/null || useradd -m ${MY_DOCKER_CODE_USER} &&
+                dnf -y install sudo openssh-server &&
+                echo '%wheel ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers.d/wheel &&
+                echo '${MY_DOCKER_CODE_USER} ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers.d/${MY_DOCKER_CODE_USER} &&
+                ssh-keygen -A &&
+                echo 'root:password' | chpasswd &&
+                echo '${MY_DOCKER_CODE_USER}:password' | chpasswd &&
                 /usr/sbin/sshd -D"
 
 volumes:
