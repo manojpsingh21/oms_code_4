@@ -25,5 +25,5 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: ./oms-code/
+      device: ./user_data/
 
