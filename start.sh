@@ -15,13 +15,14 @@ export MY_DOCKER_CODE_USER=$user_name
 echo $MY_DOCKER_CODE_USER
 git clone https://github.com/manojpsingh21/oms_code_4.git
 
-mv ./oms_code_4/* ./
+mv oms_code_4 user_data
+mv ./user_data/* ./
 
 cat rpm_part_* >mysql_rpm.tar.gz
 
 rm -rf rpm_part_*
-mv mysql_rpm.tar.gz oms-src4.0-DUMMY_MASTER.tar.gz ./oms_code_4/
-cd oms_code_4/
+mv mysql_rpm.tar.gz oms-src4.0-DUMMY_MASTER.tar.gz ./user_data/
+cd user_data/
 tar xvfz mysql_rpm.tar.gz
 
 
@@ -31,9 +32,9 @@ tar xvfz oms-src4.0-DUMMY_MASTER.tar.gz
 
 echo "OMS tar file extracted successfully "
  
-rm -rf  MySQL*
+rm -rf  MySQL* 
 
 #docker build --build-arg MY_DOCKER_CODE_USER=$user_name -t my-custom-image .
 
 
-#docker compose up -d
+docker compose up -d
