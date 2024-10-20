@@ -6,7 +6,7 @@ services:
     environment:
       - MY_DOCKER_CODE_USER=${MY_DOCKER_CODE_USER}  # Pass the host environment variable to the container
     volumes:
-      - my-linux-code-mount:/${MY_DOCKER_CODE_USER}/
+      - my-linux-code-mount:/home/${MY_DOCKER_CODE_USER}/
       - ./sshd_config:/etc/ssh/sshd_config
       - ./shared_migration:/shared_migration/
     ports:
