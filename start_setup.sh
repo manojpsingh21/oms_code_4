@@ -1,3 +1,4 @@
+#!/bin/bash
 sudo dnf install -y dos2unix
 sudo chown -R $USER:$USER /home/$USER/
 mv ~/oms-src4.0-DUMMY_MASTER/* ~/
