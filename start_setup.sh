@@ -5,8 +5,8 @@ mv ~/oms-src4.0-DUMMY_MASTER/.bash_profile ./oms-src4.0-DUMMY_MASTER/.bashrc ./o
 dos2unix ~/.bashrc
 source ~/.bashrc
 mkdir -p ~/Application/Objects
-sudo dnf install $HOME/MySQL-Cluster-*
-sudo dnf install git 
+sudo dnf install -y $HOME/MySQL-Cluster-*
+sudo dnf install -y git 
 rm -rf $HOME/MySQL-Cluster-*
 
 
