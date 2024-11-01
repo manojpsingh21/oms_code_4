@@ -1,5 +1,6 @@
 #!/bin/bash
-sudo dnf install -y dos2unix
+sudo dnf install -y wget
+sudo dnf install -y coreutils --allowerasing
 sudo chown -R $USER:$USER /home/$USER/
 mv ~/oms-src4.0-DUMMY_MASTER/* ~/
 mv ~/oms-src4.0-DUMMY_MASTER/.bash_profile ./oms-src4.0-DUMMY_MASTER/.bashrc ./oms-src4.0-DUMMY_MASTER/.gitignore ~/
@@ -25,4 +26,8 @@ tar xvfz openssl-1.1.1w.tar.gz
 cd openssl-1.1.1w/
 ./config --prefix="/shared_migration/openssl_1.1.1w/"
 make -j 4
+
+sudo dnf install -y GConf2-devel Xaw3d-devel dbus-devel dbus-glib-devel dbus-python gcc giflib-devel gnutls-devel gpm-devel gtk+-devel gtk2-devel ImageMagick ImageMagick-devel jansson-devel libX11-devel libXft-devel libXpm-devel libjpeg-devel libpng-devel libtiff-devel libungif-devel make ncurses-devel pkgconfig texi2html texinfo
+
+
 
