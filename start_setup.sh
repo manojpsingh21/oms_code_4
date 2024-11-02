@@ -27,7 +27,7 @@ cd openssl-1.1.1w/
 ./config --prefix="/shared_migration/openssl_1.1.1w/"
 make -j 4
 
-sudo dnf install -y GConf2-devel Xaw3d-devel dbus-devel dbus-glib-devel dbus-python gcc giflib-devel gnutls-devel gpm-devel gtk+-devel gtk2-devel ImageMagick ImageMagick-devel jansson-devel libX11-devel libXft-devel libXpm-devel libjpeg-devel libpng-devel libtiff-devel libungif-devel make ncurses-devel pkgconfig texi2html texinfo
 
-
+sudo dnf install -y gnutls-devel libtiff libX11 giflib GConf2 libXft Xaw3d dbus-devel  dbus-glib-devel gpm-devel gtk3-devel jansson-devel libX11-devel libtiff-devel ncurses-devel webkit2gtk3
+sudo dnf groupinstall "Development Tools"
 
