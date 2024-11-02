@@ -13,7 +13,7 @@ services:
       - "1994:22"
     command: >
       /bin/bash -c "id -u ${MY_DOCKER_CODE_USER} &>/dev/null || useradd -m ${MY_DOCKER_CODE_USER} &&
-                dnf -y install sudo openssh-server ncurses procps gcc gcc-c++ openssh-clients perl make python3.12 python2 cmake dos2unix &&
+                dnf -y install sudo openssh-server ncurses procps gcc gcc-c++ openssh-clients perl make python3.12 python2 cmake dos2unix openssl-devel &&
                 dos2unix /home/${MY_DOCKER_CODE_USER}/start_setup.sh &&
                 echo '%wheel ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers.d/wheel &&
                 echo '${MY_DOCKER_CODE_USER} ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers.d/${MY_DOCKER_CODE_USER} &&

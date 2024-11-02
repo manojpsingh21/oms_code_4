@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo dnf install -y wget
+sudo dnf install -y wget which
 sudo dnf install -y coreutils --allowerasing
 sudo chown -R $USER:$USER /home/$USER/
 mv ~/oms-src4.0-DUMMY_MASTER/* ~/
@@ -29,5 +29,5 @@ make -j 4
 
 
 sudo dnf install -y gnutls-devel libtiff libX11 giflib GConf2 libXft Xaw3d dbus-devel  dbus-glib-devel gpm-devel gtk3-devel jansson-devel libX11-devel libtiff-devel ncurses-devel webkit2gtk3
-sudo dnf groupinstall "Development Tools"
+sudo dnf groupinstall -y "Development Tools"
 
