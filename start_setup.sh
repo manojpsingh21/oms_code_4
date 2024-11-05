@@ -32,3 +32,24 @@ make install
 sudo dnf install -y gnutls-devel libtiff libX11 giflib GConf2 libXft Xaw3d dbus-devel  dbus-glib-devel gpm-devel gtk3-devel jansson-devel libX11-devel libtiff-devel ncurses-devel webkit2gtk3
 sudo dnf groupinstall -y "Development Tools"
 rm -rf openssl-1.1.1w.tar.gz oms-src4.0-DUMMY_MASTER.tar.gz oms-src4.0-DUMMY_MASTER mysql_rpm.tar.gz openssl-1.1.1w wget-log
+
+
+
+if [ "$1" = "WE" ]; then
+    echo "The first parameter is WE means your are trying to add customize vim at latest version"
+    cd
+    git clone https://github.com/vim/vim.git
+    cd vim
+    ./configure  --with-gnome --enable-gui="gtk3" --with-features=huge --enable-multibyte --enable-python3interp=yes  --with-python3-config-dir=$(python3-config --configdir) --prefix="/shared_migration/vim/"
+     make -j 4
+     make install 
+     cd
+     rm -rf vim
+     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+else
+	rm -rf ~/.vimrc
+	echo "Deleting vimrc file"
+    # Place any other commands you want to run here
+fi
+
+
