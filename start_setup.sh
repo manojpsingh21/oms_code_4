@@ -1,11 +1,12 @@
 #!/bin/bash
+#This file is created by mpsv
 sudo dnf install -y wget which
 sudo dnf install -y coreutils --allowerasing
 sudo ln -s /usr/lib64/libnsl.so.1 /usr/lib64/libnsl.so
 sudo chown -R $USER:$USER /home/$USER/
 mv ~/oms-src4.0-DUMMY_MASTER/* ~/
 mv ~/oms-src4.0-DUMMY_MASTER/.bash_profile ./oms-src4.0-DUMMY_MASTER/.bashrc ./oms-src4.0-DUMMY_MASTER/.gitignore ~/
-dos2unix ~/.bashrc
+dos2unix ~/.bashrc ~/.vimrc
 source ~/.bashrc
 mkdir -p ~/Application/Objects
 mkdir -p ~/Application/Exec/Run

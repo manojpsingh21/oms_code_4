@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "This is the OMS 4.0 source code image in Docker"
+echo "mpsv here ...This is the OMS 4.0 source code image in Docker"
 
 EXPECTED_PARAMS=1
 
