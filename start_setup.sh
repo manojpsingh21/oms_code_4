@@ -32,6 +32,7 @@ make -j 4
 make install 
 sudo dnf install -y gnutls-devel libtiff libX11 giflib GConf2 libXft Xaw3d dbus-devel  dbus-glib-devel gpm-devel gtk3-devel jansson-devel libX11-devel libtiff-devel ncurses-devel webkit2gtk3
 sudo dnf groupinstall -y "Development Tools"
+cd 
 rm -rf openssl-1.1.1w.tar.gz oms-src4.0-DUMMY_MASTER.tar.gz oms-src4.0-DUMMY_MASTER mysql_rpm.tar.gz openssl-1.1.1w wget-log
 
 
