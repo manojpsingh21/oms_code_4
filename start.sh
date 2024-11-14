@@ -19,6 +19,7 @@ mv oms_code_4 user_data
 
 #mv ./user_data/* ./
 cd ./user_data/
+git clone http://rupeelab.rupeetracker.in/worms/oms/oms-src4.0.git
 mkdir ../shared_migration ../config_data
 mv ./sshd_config ../config_data/
 cat rpm_part_* >mysql_rpm.tar.gz
@@ -31,9 +32,9 @@ tar xvfz mysql_rpm.tar.gz
 
 
 
-tar xvfz oms-src4.0-DUMMY_MASTER.tar.gz
+#tar xvfz oms-src4.0-DUMMY_MASTER.tar.gz
 
-echo "OMS tar file extracted successfully "
+#echo "OMS tar file extracted successfully "
  
 #rm -rf  MySQL* 
 
