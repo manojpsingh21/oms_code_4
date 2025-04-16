@@ -10,7 +10,7 @@ services:
       - ./../config_data/sshd_config:/etc/ssh/sshd_config
       - ./../config_data/shared_migration:/shared_migration/
     ports:
-      - "1994:22"
+      - "1901:22"
     command: >
       /bin/bash -c "id -u ${MY_DOCKER_CODE_USER} &>/dev/null || useradd -m ${MY_DOCKER_CODE_USER} &&
                 dnf -y install sudo openssh-server ncurses procps gcc gcc-c++ openssh-clients perl make python3.12 python2 cmake dos2unix openssl-devel python3-devel libnsl libnsl2 &&
